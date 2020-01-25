@@ -26,8 +26,8 @@ Se deben seguir los siguientes pasos:
  1. Descargar la base de datos desde [página oficial] con un nombre *my_data.csv* 
  2. Todos los archivos del paquete deben ser descargados, no necesariamente al mismo folder
  3. Abrir el archivo *main_file.py* y realizar las siguientes acualizaciones:
-      3.1 Actualizar el nombre del archivo en la linea indicada por **# Update data file name**. Nota que el nombre se debe encontrar entre comillas, por ejemplo *"consumo-agua.csv"*.
-      3.2. Actualizar la ruta donde se encuentra el archivo *interrupcion-legal-del-embarazo.csv*, indicada en la linea **# Update path to data file**. Por ejemplo, puedes actualizar la ruta como *"/home/bj/Documents/IntroDataScience/eda_hw/Data"*. Observe que la ruta no contiene el **/** final.
+     3.1 Actualizar el nombre del archivo en la linea indicada por **# Update data file name**. Nota que el nombre se debe encontrar entre comillas, por ejemplo *"consumo-agua.csv"*.
+     3.2. Actualizar la ruta donde se encuentra el archivo *interrupcion-legal-del-embarazo.csv*, indicada en la linea **# Update path to data file**. Por ejemplo, puedes actualizar la ruta como *"/home/bj/Documents/IntroDataScience/eda_hw/Data"*. Observe que la ruta no contiene el **/** final.
       
 
 ## Autores
