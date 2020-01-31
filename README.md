@@ -30,7 +30,6 @@ Se deben seguir los siguientes pasos:
       3.2. Actualizar la ruta donde se encuentra el archivo *interrupcion-legal-del-embarazo.csv*, indicada en la linea **# Update path to data file**. Por ejemplo, puedes actualizar la ruta como *"/home/bj/Documents/IntroDataScience/eda_hw/Data"*. Observe que la ruta no contiene el **/** final.
       
 
-## Autores
+## Reporte
 
-- **Brenda Jiménez**
-- **Guillermo Zarazua**
+https://bcjg23.github.io/ILE_CDMX_2019_Parte1/ILE_Reporte_Final.html
