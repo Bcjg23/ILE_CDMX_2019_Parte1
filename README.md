@@ -1,9 +1,7 @@
 
 # Interrupcion Legal del Embarazo
 
-El siguiente proyecto se refiere al análisis de datos de la base de interrupcion legal del embarazo con datos de 2016-2019, obtenida de la [página oficial].
-
-[1]: https://datos.cdmx.gob.mx/explore/dataset/interrupcion-legal-del-embarazo
+El siguiente proyecto se refiere al análisis de datos de la base de interrupcion legal del embarazo con datos de 2016-2019, obtenida de la [página oficial](https://datos.cdmx.gob.mx/explore/dataset/interrupcion-legal-del-embarazo).
 
 ## Prerequisitos
 
