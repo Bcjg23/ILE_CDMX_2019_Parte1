@@ -21,7 +21,7 @@ El archivo principal para correr el análisis de datos es el archivo **main_file
 
 Se deben seguir los siguientes pasos:
 
- 1. Descargar la base de datos desde [página oficial] con un nombre *my_data.csv* 
+ 1. Descargar la base de datos desde [página oficial](https://datos.cdmx.gob.mx/explore/dataset/interrupcion-legal-del-embarazo) con un nombre, e.g. *my_data.csv* 
  2. Todos los archivos del paquete deben ser descargados, no necesariamente al mismo folder
  3. Abrir el archivo *InterrupcionLegalEmbarazo.py* y realizar las siguientes acualizaciones:
       3.1 Actualizar el nombre del archivo en la linea indicada por **# Update data file name**. Nota que el nombre se debe encontrar entre comillas, por ejemplo *"interrupcion-legal-del-embarazo.csv"*.
