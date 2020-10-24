@@ -10,7 +10,7 @@ def df_variables_info(df):
     This function gives information about the df: number of observations, variables, type and number of variables
     
     params: df is a dataframe from which we want the information
-    return: NONE???!!!!
+    return: NONE
     """
     # Number of variables
     print('Number of variables:', df.shape[1])
