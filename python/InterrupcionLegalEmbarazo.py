@@ -43,7 +43,7 @@ import feature_selection
 # Full project (Spanish): https://github.com/Bcjg23/ILE_CDMX_2019_Parte1
 # Final report (Spanish): https://bcjg23.github.io/ILE_CDMX_2019_Parte1/ILE_Reporte_Final.html
 
-##################################################  LOAD DATASET #############################################################
+##################################################  LOAD DATASET #######################################################
 # Update data file name
 datafile_name = 'interrupcion-legal-del-embarazo.csv'
 
@@ -101,7 +101,8 @@ clean_interrupcion_legal['fingreso'].iloc[no_observ] = '17/07/19'
 # Adjut variable 'año' in 'fingreso' according to variable 'ano' 
 # Differences are assumed as errors
 indx = ano_menor_16_mayor_19.index.values
-clean_interrupcion_legal.loc[indx, 'fingreso'] = ano_menor_16_mayor_19.iloc[indx, 0] +'/' + ano_menor_16_mayor_19.iloc[indx, 1] + '/' + str(clean_interrupcion_legal.iloc[indx,'ano'])[-2:]
+clean_interrupcion_legal.loc[indx, 'fingreso'] = ano_menor_16_mayor_19.iloc[indx, 0] +'/' + ano_menor_16_mayor_19.iloc[indx, 1] +
+                                                 '/' + str(clean_interrupcion_legal.iloc[indx,'ano'])[-2:]
 
 # After correcting errors, we change to "date"
 clean_interrupcion_legal['fingreso'] = pd.to_datetime(clean_interrupcion_legal['fingreso'])
@@ -206,7 +207,8 @@ plt.show()
 
 sns.set_style("darkgrid")
 fig, ax = plt.subplots(figsize=(15,7))
-g = clean_interrupcion_legal.groupby(['ano_mes_ile', '23_o_mayor']).count()['mes'].unstack().plot(ax=ax, marker='o', color= ['gray', 'blue'])
+g = clean_interrupcion_legal.groupby(['ano_mes_ile', '23_o_mayor']).count()['mes'].unstack().plot(ax=ax, marker='o',
+                                                                                                  color= ['gray', 'blue'])
 ax.xaxis.grid(True, which='minor')
 leg = g.axes.get_legend()
 leg.set_title('')
@@ -248,7 +250,8 @@ df_aux.columns = ['Porcentaje', '23_o_mayor', 'edo_civil1']
 df_aux.index = df_aux.reset_index(level=0, drop=True)
 df_aux.index = list(range(0,12))
 
-g = sns.catplot(y="Porcentaje", x='edo_civil1', hue='23_o_mayor', kind="bar", data=df_aux, palette=['gray', 'blue'], height=6, aspect=1.3, legend_out=False)
+g = sns.catplot(y="Porcentaje", x='edo_civil1', hue='23_o_mayor', kind="bar", data=df_aux,
+                palette=['gray', 'blue'], height=6, aspect=1.3, legend_out=False)
 g.ax.set_yticks(np.arange(0,110,10), minor=True)
 leg = g.axes.flat[0].get_legend()
 leg.set_title('')
@@ -314,7 +317,8 @@ plt.show()
 
 pd.options.display.float_format = '{:,}'.format
 pivot_aux = pd.pivot_table(clean_interrupcion_legal, index='escolaridad', columns='edo_civil', aggfunc='count')['mes']
-pivot_aux = pivot_aux.reindex(['posgrado', 'superior', 'media_superior', 'secundaria', 'primaria','otra', 'ninguno', 'no_especificado' ])
+pivot_aux = pivot_aux.reindex(['posgrado', 'superior', 'media_superior', 'secundaria', 
+                               'primaria','otra', 'ninguno', 'no_especificado' ])
 pivot_aux = pivot_aux[['casada', 'union_libre', 'soltera', 'divorciada', 'separada','no_especificado']]
 pivot_aux
 #sns.heatmap(pivot_aux)
@@ -360,8 +364,10 @@ FECHA_DE_CORTE = '2018-07-01'
 mask = (base_interrupcion_legal['ano_mes_ile'] <= FECHA_DE_CORTE)
 entrenamiento = base_interrupcion_legal[mask]
 prueba = base_interrupcion_legal[~mask]
-print('No. observaciones en entre: ', entrenamiento.shape[0], ' que representa el ', round(entrenamiento.shape[0]/base_interrupcion_legal.shape[0]*100,0),'%')
-print('No. observaciones en prueb: ', prueba.shape[0], ' que representa el ', round(prueba.shape[0]/base_interrupcion_legal.shape[0]*100,0),'%')
+print('No. observaciones en entre: ', entrenamiento.shape[0], ' que representa el ', 
+      round(entrenamiento.shape[0]/base_interrupcion_legal.shape[0]*100,0),'%')
+print('No. observaciones en prueb: ', prueba.shape[0], ' que representa el ', 
+      round(prueba.shape[0]/base_interrupcion_legal.shape[0]*100,0),'%')
 
 y_entrenamiento = entrenamiento['23_o_mayor']
 x_entrenamiento = pd.DataFrame(entrenamiento.drop(['23_o_mayor', 'ano_mes_ile'], axis = 1))
@@ -490,7 +496,7 @@ plt.ylabel('Variables')
 plt.title("Vizualizacion del score de importancia de las variables")
 plt.show()
 
-################################ SELECTION OF VARIABLES FOR MODEL #############################################
+###################################### SELECTION OF VARIABLES FOR MODEL #############################################
 x_entrenamiento = x_entrenamiento[['menarca', 'nhijos', 'ocupacion2_estudiante', 'npartos', 'escolaridad_superior',
                                    'ocupacion2_empleada', 'ncesarea']]
 
