@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>ILE_Reporte_all</title>
+<title>ILE_Reporte_Final</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13086,7 +13086,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[408]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Hide code cells when saving as HTML</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Hide code cells when saving as HTML</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
 <span class="kn">import</span> <span class="nn">IPython.core.display</span> <span class="k">as</span> <span class="nn">di</span> <span class="c1"># Example: di.display_html(&#39;&lt;h3&gt;%s:&lt;/h3&gt;&#39; % str, raw=True)</span>
@@ -13171,7 +13171,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[410]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import functions created in .py</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import created functions (in .py)</span>
 <span class="kn">import</span> <span class="nn">load_data</span> 
 <span class="kn">import</span> <span class="nn">clean_data</span>
 <span class="kn">import</span> <span class="nn">transform_data</span>
@@ -13243,16 +13243,16 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[411]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##################################################  CARGAR BASE  #############################################################</span>
-<span class="c1">#Update data file name</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##################################################  LOAD DATASET #############################################################</span>
+<span class="c1"># Update data file name</span>
 <span class="n">datafile_name</span> <span class="o">=</span> <span class="s1">&#39;interrupcion-legal-del-embarazo.csv&#39;</span>
-<span class="c1">#Update path to data file</span>
 
+<span class="c1"># Update path to data file</span>
 <span class="n">path_to_datafile</span> <span class="o">=</span> <span class="s1">&#39;~/Documents/Brenda/Proyecto/Data&#39;</span>
 <span class="c1">#path_to_datafile = &#39;/home/bj/Documents/IntroDataScience/Proyecto/Data&#39;</span>
 <span class="c1">#path_to_datafile =&#39;C:/Users/GZARAZUA/Desktop/MCD/MINERIA DE DATOS/Reporte aborto&#39;</span>
 
-<span class="c1">#we load the database</span>
+<span class="c1"># Load the dataset</span>
 <span class="n">interrupcion_legal</span> <span class="o">=</span> <span class="n">load_data</span><span class="o">.</span><span class="n">load_df</span><span class="p">(</span><span class="n">datafile_name</span><span class="p">,</span> <span class="n">path_to_datafile</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -13329,9 +13329,9 @@ Observamos que las variables son en su mayoría numericas (conteos) y algunas ca
 <div class="prompt input_prompt">In&nbsp;[412]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#We define a maximum number of columns to display</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define a maximum number of columns to display</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_columns</span> <span class="o">=</span> <span class="mi">80</span>
-<span class="c1"># Datos originales de entrada</span>
+<span class="c1"># Show raw dataset</span>
 <span class="c1">#interrupcion_legal.head()</span>
 </pre></div>
 
@@ -13345,8 +13345,8 @@ Observamos que las variables son en su mayoría numericas (conteos) y algunas ca
 <div class="prompt input_prompt">In&nbsp;[413]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">########################################  LIMPIAR NOMBRE VARIABLES  ######################################################</span>
-<span class="c1"># Estandarizacion de los nombres de las columnas</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">####################################### CLEAN NAME VARIABLES ##################################################</span>
+<span class="c1"># Columns names standardization</span>
 <span class="n">clean_interrupcion_legal</span><span class="o">=</span><span class="n">clean_data</span><span class="o">.</span><span class="n">clean_variables_names</span><span class="p">(</span><span class="n">interrupcion_legal</span><span class="p">)</span>
 </pre></div>
 
@@ -13360,12 +13360,12 @@ Observamos que las variables son en su mayoría numericas (conteos) y algunas ca
 <div class="prompt input_prompt">In&nbsp;[414]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">############################################## INFORMACION GENERAL ##################################################</span>
-<span class="c1"># Informacion general de la base</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">############################################## DATASET GENERAL INFORMATION ##################################################</span>
+<span class="c1"># General information</span>
 <span class="c1">#eda.df_variables_info(clean_interrupcion_legal)</span>
-<span class="c1"># Clasificación de las variables por tipo</span>
+<span class="c1"># Classify variables per type</span>
 <span class="p">[</span><span class="n">numeric_variables</span><span class="p">,</span> <span class="n">categorical_variables</span><span class="p">,</span> <span class="n">dates_variables</span><span class="p">,</span> <span class="n">string_variables</span><span class="p">]</span> <span class="o">=</span> <span class="n">eda</span><span class="o">.</span><span class="n">info_type_of_vars</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="p">)</span>
-<span class="c1"># Imprime a pantalla las variables por tipo</span>
+<span class="c1"># Print to screen variables per type</span>
 <span class="c1">#eda.print_info_type_of_vars(numeric_variables, categorical_variables, dates_variables, string_variables)conf_mat.sum(1)</span>
 </pre></div>
 
@@ -13379,14 +13379,11 @@ Observamos que las variables son en su mayoría numericas (conteos) y algunas ca
 <div class="prompt input_prompt">In&nbsp;[415]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#######################################  LIMPIAMOS VALORES DE VARIABLES  ###############################################</span>
-<span class="c1"># Se observa que de las variables de tipo &quot;string&quot;, 3 corresponden a variables tipo &quot;date&quot; que</span>
-<span class="c1"># no fueron reconocidas, a saber: fingreso, fmenstrua, h_fingreso</span>
-
-<span class="c1"># Primeramente estandarizaremos los valores del resto de las variables string</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#######################################  CLEAN VARIABLES VALUES  #############################################</span>
+<span class="c1"># Standardization of the values of &quot;string&quot; variables. </span>
+<span class="c1"># Except fingreso, fmenstrua, h_fingres that are &quot;date&quot; variables, but stored as &quot;string&quot;</span>
 <span class="n">clean_interrupcion_legal</span> <span class="o">=</span> <span class="n">transform_data</span><span class="o">.</span><span class="n">clean_variables_values</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;mes&#39;</span><span class="p">,</span><span class="s1">&#39;autoref&#39;</span><span class="p">,</span><span class="s1">&#39;edocivil_descripcion&#39;</span><span class="p">,</span><span class="s1">&#39;desc_derechohab&#39;</span><span class="p">,</span><span class="s1">&#39;nivel_edu&#39;</span><span class="p">,</span><span class="s1">&#39;ocupacion&#39;</span><span class="p">,</span><span class="s1">&#39;religion&#39;</span><span class="p">,</span><span class="s1">&#39;parentesco&#39;</span><span class="p">,</span><span class="s1">&#39;entidad&#39;</span><span class="p">,</span><span class="s1">&#39;alc_o_municipio&#39;</span><span class="p">,</span><span class="s1">&#39;consejeria&#39;</span><span class="p">,</span><span class="s1">&#39;anticonceptivo&#39;</span><span class="p">,</span><span class="s1">&#39;motiles&#39;</span><span class="p">,</span><span class="s1">&#39;desc_servicio&#39;</span><span class="p">,</span><span class="s1">&#39;p_consent&#39;</span><span class="p">,</span><span class="s1">&#39;procile&#39;</span><span class="p">,</span><span class="s1">&#39;s_complica&#39;</span><span class="p">,</span><span class="s1">&#39;panticoncep&#39;</span>
 <span class="p">])</span>
-<span class="c1">#clean_interrupcion_legal.head(30)</span>
 </pre></div>
 
     </div>
@@ -13399,8 +13396,8 @@ Observamos que las variables son en su mayoría numericas (conteos) y algunas ca
 <div class="prompt input_prompt">In&nbsp;[416]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#######################################  HACEMOS RECONOCER VARIABLES DE FECHA  ###########################################</span>
-<span class="c1">###### Correccion de &quot;fmenstrua&quot; a variable tipo &quot;date&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#######################################  ADJUST TYPES OF VARIABLES ###########################################</span>
+<span class="c1"># Change type of &quot;fmenstrua&quot; to &quot;date&quot; type</span>
 
 <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;fmenstrua&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;fmenstrua&#39;</span><span class="p">])</span>
 </pre></div>
@@ -13415,15 +13412,13 @@ Observamos que las variables son en su mayoría numericas (conteos) y algunas ca
 <div class="prompt input_prompt">In&nbsp;[417]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">###### Correccion de &quot;fingreso&quot; </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Change type of &quot;fingreso&quot; to &quot;date&quot; type</span>
 
-<span class="c1">#Cambiamos np.nan a NA para que sea reconocida</span>
+<span class="c1"># Change NA to np.nan</span>
 <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;fingreso&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;fingreso&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="s2">&quot;NA&quot;</span><span class="p">)</span>
-<span class="c1"># Separamos la fingreso en 3 columnas (año, mes, dia) usando &#39;/&#39; como token, para identificar posibles errores</span>
+<span class="c1"># Split fingreso in (year, month, day) and check for errors in dates</span>
 <span class="n">dividir</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)])</span>
 <span class="n">aux</span> <span class="o">=</span> <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;fingreso&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">dividir</span><span class="p">)</span>
-<span class="c1"># Regresamos a los valores originales</span>
-<span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;fingreso&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;fingreso&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;NA&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13438,11 +13433,11 @@ Observamos que las variables son en su mayoría numericas (conteos) y algunas ca
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">aux</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">aux</span><span class="p">)</span>
 <span class="n">aux</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dia&#39;</span><span class="p">,</span><span class="s1">&#39;mes&#39;</span><span class="p">,</span><span class="s1">&#39;ano&#39;</span><span class="p">]</span>
-<span class="c1"># Identificamos meses &gt; 12, para checar que no haya errores</span>
+<span class="c1"># Check for months &gt; 12</span>
 <span class="n">mes_mayor_12</span> <span class="o">=</span> <span class="n">aux</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">aux</span><span class="p">[</span><span class="s1">&#39;mes&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">]</span>
 <span class="c1">#print(&#39;Observaciones con mes mayor a 12: \n&#39;, mes_mayor_12,&#39;\n&#39;)</span>
 
-<span class="c1"># Identificamos años menores a 2016 o mayores a 2019 -podrían indicar un error</span>
+<span class="c1"># Check years before 2016 o greater than 2019 could be errors</span>
 <span class="n">ano_menor_16_mayor_19</span> <span class="o">=</span> <span class="n">aux</span><span class="p">[(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">aux</span><span class="p">[</span><span class="s1">&#39;ano&#39;</span><span class="p">])</span><span class="o">&lt;</span><span class="mi">16</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">aux</span><span class="p">[</span><span class="s1">&#39;ano&#39;</span><span class="p">])</span><span class="o">&gt;</span><span class="mi">19</span><span class="p">)]</span>
 <span class="c1">#print(&#39;Observaciones con año menor a 2016 o mayor a 2019: \n&#39;, ano_menor_16_mayor_19)</span>
 </pre></div>
@@ -13457,12 +13452,10 @@ Observamos que las variables son en su mayoría numericas (conteos) y algunas ca
 <div class="prompt input_prompt">In&nbsp;[419]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Obtenemos el indice de las observaciones con errores</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get index with errors</span>
 <span class="n">no_observ</span> <span class="o">=</span> <span class="n">mes_mayor_12</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mes_mayor_12</span><span class="p">[</span><span class="s1">&#39;mes&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;0719&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="c1"># Corregimos los datos</span>
+<span class="c1"># Set rigth date</span>
 <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;fingreso&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">no_observ</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;17/07/19&#39;</span>
-<span class="c1"># Checamos que los cambios esten en la base</span>
-<span class="c1">#clean_interrupcion_legal[&#39;fingreso&#39;][no_observ]</span>
 </pre></div>
 
     </div>
@@ -13499,13 +13492,10 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[420]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Se asjuta el año de la fecha &#39;fingreso&#39; acorde a la variable &#39;ano&#39; (se asume que el año difiere por ser un error)</span>
-<span class="n">temp</span> <span class="o">=</span> <span class="n">ano_menor_16_mayor_19</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">temp</span><span class="p">)):</span>
-    <span class="c1"># Corregimos el dato</span>
-    <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;fingreso&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">ano_menor_16_mayor_19</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">ano_menor_16_mayor_19</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;ano&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]])[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
-    <span class="c1">#check the correction</span>
-    <span class="c1">#print(clean_interrupcion_legal[&#39;fingreso&#39;][temp[i]])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Adjut variable &#39;año&#39; in &#39;fingreso&#39; according to variable &#39;ano&#39; </span>
+<span class="c1"># Differences are assumed as errors</span>
+<span class="n">indx</span> <span class="o">=</span> <span class="n">ano_menor_16_mayor_19</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+<span class="n">clean_interrupcion_legal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indx</span><span class="p">,</span> <span class="s1">&#39;fingreso&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ano_menor_16_mayor_19</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indx</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span><span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">ano_menor_16_mayor_19</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indx</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indx</span><span class="p">,</span><span class="s1">&#39;ano&#39;</span><span class="p">])[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
 </pre></div>
 
     </div>
@@ -13531,7 +13521,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[422]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Finalmente cambiamos a tipo &quot;date&quot; la variable &quot;fingreso&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># After correcting errors, we change to &quot;date&quot;</span>
 <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;fingreso&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;fingreso&#39;</span><span class="p">])</span>
 </pre></div>
 
@@ -13545,9 +13535,8 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[423]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Volmenos a clasificar las variables por tipo para actualizar los cambios</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Update classification of variables by type</span>
 <span class="p">[</span><span class="n">numeric_variables</span><span class="p">,</span> <span class="n">categorical_variables</span><span class="p">,</span> <span class="n">dates_variables</span><span class="p">,</span> <span class="n">string_variables</span><span class="p">]</span> <span class="o">=</span> <span class="n">eda</span><span class="o">.</span><span class="n">info_type_of_vars</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="p">)</span>
-<span class="c1"># Imprimimos las variables por tipo</span>
 <span class="c1"># eda.print_info_type_of_vars(numeric_variables, categorical_variables, dates_variables, string_variables)</span>
 </pre></div>
 
@@ -13581,10 +13570,9 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[424]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#######################################  CORRECCIÓN DE ALGUNOS ERRORES  ###########################################</span>
-<span class="c1"># Corrección/observación autoref...</span>
-
-<span class="c1"># Existen observaciones con &#39;autorefereida&#39; y &#39;autorreferida&#39; que se asume como error ortografico</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#######################################  CORRECT ORTHOGRAPHIC ERRORS #########################################</span>
+<span class="c1"># Variable: autoref</span>
+<span class="c1"># Misspelling &#39;autorreferida&#39; as &#39;autorefereida&#39;</span>
 <span class="n">clean_interrupcion_legal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;autoref&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;autoreferida&#39;</span><span class="p">,</span> <span class="s1">&#39;autoref&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;autorreferida&#39;</span>
 </pre></div>
 
@@ -13598,9 +13586,8 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[425]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Corrección/observación desc_derechohab...</span>
-
-<span class="c1">#clean_interrupcion_legal.loc[clean_interrupcion_legal[&#39;edocivil_descripcion&#39;]==&#39;n/e&#39;, &#39;edocivil_descripcion&#39;]=&#39;ne&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Variable: desc_derechohab...</span>
+<span class="n">clean_interrupcion_legal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;edocivil_descripcion&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;n/e&#39;</span><span class="p">,</span> <span class="s1">&#39;edocivil_descripcion&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;ne&#39;</span>
 </pre></div>
 
     </div>
@@ -13613,9 +13600,8 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[426]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Corrección/observación fsexual y fmenstrua...</span>
-
-<span class="c1">#Se observa una fecha fmenstrua mayor a 2019, lo cual se asume como un error y se cambia por NA</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Variables: fmenstrua</span>
+<span class="c1"># values of &#39;fmenstrua&#39; greater than 2019 are assumed as errors and changed to NaN</span>
 <span class="n">clean_interrupcion_legal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;fmenstrua&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">date</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">31</span><span class="p">)),</span> <span class="s1">&#39;fmenstrua&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
 </pre></div>
 
@@ -13638,9 +13624,8 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[427]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">####################################### TRANSFORMACION DE DATOS #####################################################</span>
-<span class="c1">############ Creamos la variable objetivo</span>
-<span class="c1">#Creamos la variable objetivo</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">####################################### TRASFORMATION OF DATA ################################################</span>
+<span class="c1"># Create target variable</span>
 <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;23_o_mayor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;edad&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="c1">#clean_interrupcion_legal.head()</span>
 </pre></div>
@@ -13655,11 +13640,10 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[428]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">########### Creamos la variable temporal &quot;ano_mes_ile&quot;</span>
-<span class="c1">##Concatenamos las variables ano y mes (convirtiendo mes a numero)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create temporal variable &quot;ano_mes_ile&quot;</span>
 <span class="n">mes_num</span> <span class="o">=</span> <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;mes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">transform_data</span><span class="o">.</span><span class="n">month_string_to_number_string</span><span class="p">)</span>
 <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;ano_mes_ile&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;ano&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">mes_num</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-<span class="c1"># Convertimos la variable a tipo &quot;date&quot;</span>
+<span class="c1"># Adjust type to &quot;date&quot;</span>
 <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;ano_mes_ile&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;ano_mes_ile&#39;</span><span class="p">])</span>
 </pre></div>
 
@@ -13673,7 +13657,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[429]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">########### Edad por quintiles</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Group age by quintils</span>
 <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;edad_quintiles&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;edad&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">49</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;0 a 4&quot;</span><span class="p">,</span> <span class="s2">&quot;5 a 9&quot;</span><span class="p">,</span> <span class="s2">&quot;10 a 14&quot;</span><span class="p">,</span> <span class="s2">&quot;15 a 19&quot;</span><span class="p">,</span> <span class="s2">&quot;20 a 24&quot;</span><span class="p">,</span> <span class="s2">&quot;25 a 29&quot;</span><span class="p">,</span> <span class="s2">&quot;30 a 34&quot;</span><span class="p">,</span> <span class="s2">&quot;35 a 39&quot;</span><span class="p">,</span> <span class="s2">&quot;40 a 44&quot;</span><span class="p">,</span> <span class="s2">&quot;45 a 49&quot;</span><span class="p">,</span> <span class="s2">&quot;50 a 54&quot;</span><span class="p">,</span> <span class="s2">&quot;55 a 59&quot;</span><span class="p">,</span> <span class="s2">&quot;60 y mas&quot;</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
@@ -13687,8 +13671,9 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[430]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">########### Recategorizacion de *estado_civil*</span>
-<span class="n">dic_edo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;soltera&#39;</span><span class="p">:</span><span class="s1">&#39;soltera&#39;</span><span class="p">,</span> <span class="s1">&#39;divorciada&#39;</span><span class="p">:</span><span class="s1">&#39;divorciada&#39;</span><span class="p">,</span> <span class="s1">&#39;union_libre&#39;</span><span class="p">:</span><span class="s1">&#39;union_libre&#39;</span><span class="p">,</span> <span class="s1">&#39;casada&#39;</span><span class="p">:</span><span class="s1">&#39;casada&#39;</span><span class="p">,</span> <span class="s1">&#39;separada&#39;</span><span class="p">:</span><span class="s1">&#39;separada&#39;</span><span class="p">,</span> <span class="s1">&#39;n/e&#39;</span><span class="p">:</span> <span class="s1">&#39;no_especificado&#39;</span><span class="p">,</span> <span class="s1">&#39;na&#39;</span><span class="p">:</span><span class="s1">&#39;no_especificado&#39;</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Recategorize civil state  variable &#39;estado_civil&#39;</span>
+<span class="n">dic_edo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;soltera&#39;</span><span class="p">:</span><span class="s1">&#39;soltera&#39;</span><span class="p">,</span> <span class="s1">&#39;divorciada&#39;</span><span class="p">:</span><span class="s1">&#39;divorciada&#39;</span><span class="p">,</span> <span class="s1">&#39;union_libre&#39;</span><span class="p">:</span><span class="s1">&#39;union_libre&#39;</span><span class="p">,</span> <span class="s1">&#39;casada&#39;</span><span class="p">:</span><span class="s1">&#39;casada&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;separada&#39;</span><span class="p">:</span><span class="s1">&#39;separada&#39;</span><span class="p">,</span> <span class="s1">&#39;n/e&#39;</span><span class="p">:</span> <span class="s1">&#39;no_especificado&#39;</span><span class="p">,</span> <span class="s1">&#39;na&#39;</span><span class="p">:</span><span class="s1">&#39;no_especificado&#39;</span><span class="p">}</span>
 <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;edo_civil&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clean_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;edocivil_descripcion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">dic_edo</span><span class="p">)</span>
 </pre></div>
 
@@ -13702,8 +13687,8 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[431]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">########### Recategorizacion de *nivel_educativo*</span>
-<span class="n">dic_escol</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;ninguno&#39;</span><span class="p">:</span><span class="s1">&#39;ninguno&#39;</span><span class="p">,</span> <span class="s1">&#39;preescolar&#39;</span><span class="p">:</span><span class="s1">&#39;ninguno&#39;</span><span class="p">,</span> <span class="s1">&#39;primaria_completa&#39;</span><span class="p">:</span><span class="s1">&#39;primaria&#39;</span><span class="p">,</span> <span class="s1">&#39;primaria_incompleta&#39;</span><span class="p">:</span><span class="s1">&#39;primaria&#39;</span><span class="p">,</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Recategorize education level variable (&#39;nivel_educativo&#39;)</span>
+<span class="n">dic_escol</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ninguno&#39;</span><span class="p">:</span><span class="s1">&#39;ninguno&#39;</span><span class="p">,</span> <span class="s1">&#39;preescolar&#39;</span><span class="p">:</span><span class="s1">&#39;ninguno&#39;</span><span class="p">,</span> <span class="s1">&#39;primaria_completa&#39;</span><span class="p">:</span><span class="s1">&#39;primaria&#39;</span><span class="p">,</span> <span class="s1">&#39;primaria_incompleta&#39;</span><span class="p">:</span><span class="s1">&#39;primaria&#39;</span><span class="p">,</span>
              <span class="s1">&#39;secundaria_incompleta&#39;</span><span class="p">:</span><span class="s1">&#39;secundaria&#39;</span><span class="p">,</span> <span class="s1">&#39;secundaria_completa&#39;</span><span class="p">:</span><span class="s1">&#39;secundaria&#39;</span><span class="p">,</span> <span class="s1">&#39;preparatoria_incompleta&#39;</span><span class="p">:</span><span class="s1">&#39;media_superior&#39;</span><span class="p">,</span>
              <span class="s1">&#39;preparatoria_completa&#39;</span><span class="p">:</span><span class="s1">&#39;media_superior&#39;</span><span class="p">,</span> <span class="s1">&#39;carrera_tecnica&#39;</span><span class="p">:</span><span class="s1">&#39;superior&#39;</span><span class="p">,</span> <span class="s1">&#39;licenciatura_incompleta&#39;</span><span class="p">:</span><span class="s1">&#39;superior&#39;</span><span class="p">,</span><span class="s1">&#39;licenciatura_completa&#39;</span><span class="p">:</span><span class="s1">&#39;superior&#39;</span><span class="p">,</span>
              <span class="s1">&#39;maestria&#39;</span><span class="p">:</span><span class="s1">&#39;posgrado&#39;</span><span class="p">,</span> <span class="s1">&#39;doctorado&#39;</span><span class="p">:</span><span class="s1">&#39;posgrado&#39;</span><span class="p">,</span> <span class="s1">&#39;posgrado&#39;</span><span class="p">:</span><span class="s1">&#39;posgrado&#39;</span><span class="p">,</span> <span class="s1">&#39;posgrado_incompleto&#39;</span><span class="p">:</span><span class="s1">&#39;posgrado&#39;</span><span class="p">,</span>
@@ -13722,7 +13707,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[432]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">########### Recategorizacion de *ocupacion*</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Recategorize ocupation variable (&#39;ocupacion&#39;)</span>
 <span class="n">dic_ocup</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;abogada&#39;</span><span class="p">:</span><span class="s1">&#39;profesionista&#39;</span><span class="p">,</span> <span class="s1">&#39;administradora&#39;</span><span class="p">:</span><span class="s1">&#39;profesionista&#39;</span><span class="p">,</span> <span class="s1">&#39;ama_de_casa&#39;</span><span class="p">:</span><span class="s1">&#39;ama_de_casa&#39;</span><span class="p">,</span> <span class="s1">&#39;arquitecta&#39;</span><span class="p">:</span><span class="s1">&#39;profesionista&#39;</span><span class="p">,</span>
             <span class="s1">&#39;artista&#39;</span><span class="p">:</span><span class="s1">&#39;profesionista&#39;</span><span class="p">,</span> <span class="s1">&#39;asesora_financiera&#39;</span><span class="p">:</span><span class="s1">&#39;profesionista&#39;</span><span class="p">,</span> <span class="s1">&#39;asesora_juridica&#39;</span><span class="p">:</span><span class="s1">&#39;profesionista&#39;</span><span class="p">,</span> <span class="s1">&#39;auditora&#39;</span><span class="p">:</span><span class="s1">&#39;profesionista&#39;</span><span class="p">,</span>
             <span class="s1">&#39;bibliotecaria&#39;</span><span class="p">:</span><span class="s1">&#39;profesionista&#39;</span><span class="p">,</span> <span class="s1">&#39;cajera&#39;</span><span class="p">:</span><span class="s1">&#39;empleada&#39;</span><span class="p">,</span> <span class="s1">&#39;capturista&#39;</span><span class="p">:</span><span class="s1">&#39;empleada&#39;</span><span class="p">,</span> <span class="s1">&#39;chofer&#39;</span><span class="p">:</span><span class="s1">&#39;empleada&#39;</span><span class="p">,</span> <span class="s1">&#39;cientifica&#39;</span><span class="p">:</span><span class="s1">&#39;profesionista&#39;</span><span class="p">,</span>
@@ -13750,8 +13735,8 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[433]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">########### Recategorizacion de *anticonceptivo*</span>
-<span class="n">dic_anti</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;ninguno&#39;</span><span class="p">:</span><span class="s1">&#39;ninguno&#39;</span><span class="p">,</span> <span class="s1">&#39;na&#39;</span><span class="p">:</span><span class="s1">&#39;ninguno&#39;</span><span class="p">,</span><span class="s1">&#39;condon&#39;</span><span class="p">:</span><span class="s1">&#39;condon&#39;</span><span class="p">,</span> <span class="s1">&#39;condon_y_otro&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Recategorize use of contraceptive variable (&#39;anticonceptivo&#39;)</span>
+<span class="n">dic_anti</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ninguno&#39;</span><span class="p">:</span><span class="s1">&#39;ninguno&#39;</span><span class="p">,</span> <span class="s1">&#39;na&#39;</span><span class="p">:</span><span class="s1">&#39;ninguno&#39;</span><span class="p">,</span><span class="s1">&#39;condon&#39;</span><span class="p">:</span><span class="s1">&#39;condon&#39;</span><span class="p">,</span> <span class="s1">&#39;condon_y_otro&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span>
             <span class="s1">&#39;anillo_vaginal&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span> <span class="s1">&#39;anticoncepcion_de_emergencia&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span> <span class="s1">&#39;anticoncepcion_de_emergencia_y_otro&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span>
             <span class="s1">&#39;barrera&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span> <span class="s1">&#39;calendario&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span> <span class="s1">&#39;coito_interrumpido&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span> <span class="s1">&#39;diu&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span> <span class="s1">&#39;hormonal_inyectable&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span>
             <span class="s1">&#39;hormonal_oral&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span> <span class="s1">&#39;implante_subdermico&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span> <span class="s1">&#39;inyeccion&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span> <span class="s1">&#39;medicamento&#39;</span><span class="p">:</span><span class="s1">&#39;otro&#39;</span><span class="p">,</span>
@@ -13770,9 +13755,8 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt input_prompt">In&nbsp;[434]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Actualizamos las variables por tipo</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Update variables list by type</span>
 <span class="p">[</span><span class="n">numeric_variables</span><span class="p">,</span> <span class="n">categorical_variables</span><span class="p">,</span> <span class="n">dates_variables</span><span class="p">,</span> <span class="n">string_variables</span><span class="p">]</span> <span class="o">=</span> <span class="n">eda</span><span class="o">.</span><span class="n">info_type_of_vars</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="p">)</span>
-<span class="c1"># Imprime las variables por tipo</span>
 <span class="c1">#eda.print_info_type_of_vars(numeric_variables, categorical_variables, dates_variables, string_variables)</span>
 </pre></div>
 
@@ -13795,7 +13779,7 @@ Tambien se recomienda consultar el pandas profiling que este código genera</p>
 <div class="prompt input_prompt">In&nbsp;[437]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Data profiling para variables numéricas</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Data profiling for numeric variables</span>
 <span class="n">eda</span><span class="o">.</span><span class="n">descriptive_stats_for_numeric_vars</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="p">,</span> <span class="n">numeric_variables</span><span class="p">)</span>
 </pre></div>
 
@@ -14160,7 +14144,7 @@ Tambien se recomienda consultar el pandas profiling que este código genera</p>
 <div class="prompt input_prompt">In&nbsp;[438]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Data profiling para variables categoricas</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Data profiling for categorical variables</span>
 <span class="n">eda</span><span class="o">.</span><span class="n">descriptive_stats_for_categorical_vars</span><span class="p">(</span><span class="n">clean_interrupcion_legal</span><span class="p">,</span> <span class="n">string_variables</span><span class="p">)</span>
 </pre></div>
 
@@ -14540,7 +14524,8 @@ Tambien se recomienda consultar el pandas profiling que este código genera</p>
 <div class="prompt input_prompt">In&nbsp;[348]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">################################################ GRAPHS ######################################################</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">clean_interrupcion_legal</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;ano_mes_ile&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="s1">&#39;ano&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkblue&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
 
@@ -14583,23 +14568,19 @@ Tambien se recomienda consultar el pandas profiling que este código genera</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
-
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="n">clean_interrupcion_legal</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;ano_mes_ile&#39;</span><span class="p">,</span> <span class="s1">&#39;23_o_mayor&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="s1">&#39;mes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">])</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">)</span>
-
 <span class="n">leg</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span>
 <span class="n">leg</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="n">new_labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Menores a 23 años&#39;</span><span class="p">,</span> <span class="s1">&#39;23 años o más&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">leg</span><span class="o">.</span><span class="n">texts</span><span class="p">,</span> <span class="n">new_labels</span><span class="p">):</span> <span class="n">t</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 
-
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Número de ILE por mes y rango de edad</span><span class="se">\n</span><span class="s2"> (2016-2019)&quot;</span><span class="p">)</span>
-
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -16707,10 +16688,10 @@ Tambien se recomienda consultar el pandas profiling que este código genera</p>
 <div class="prompt input_prompt">In&nbsp;[386]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">####################################### SELECCION DE VARIABLES SEGUN EDA #############################################</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#######################################  SELECTION OF VARIABLES  #############################################</span>
 <span class="n">base_interrupcion_legal</span> <span class="o">=</span> <span class="n">clean_interrupcion_legal</span><span class="p">[[</span><span class="s1">&#39;ano_mes_ile&#39;</span><span class="p">,</span> <span class="s1">&#39;23_o_mayor&#39;</span><span class="p">,</span> <span class="s1">&#39;edo_civil&#39;</span><span class="p">,</span> <span class="s1">&#39;escolaridad&#39;</span><span class="p">,</span> <span class="s1">&#39;ocupacion2&#39;</span><span class="p">,</span> <span class="s1">&#39;menarca&#39;</span><span class="p">,</span> <span class="s1">&#39;anticonceptivo2&#39;</span><span class="p">,</span> <span class="s1">&#39;nhijos&#39;</span><span class="p">,</span> <span class="s1">&#39;naborto&#39;</span><span class="p">,</span> <span class="s1">&#39;npartos&#39;</span><span class="p">,</span> <span class="s1">&#39;ncesarea&#39;</span><span class="p">,</span> <span class="s1">&#39;nile&#39;</span> <span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-<span class="c1">#Ordenamos los datos conforme a la variable temporal</span>
+<span class="c1"># Order dataset by the temporal variable &#39;ano_mes_ile&#39;</span>
 <span class="n">base_interrupcion_legal</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ano_mes_ile&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1">#base_interrupcion_legal</span>
@@ -16946,8 +16927,7 @@ Tambien se recomienda consultar el pandas profiling que este código genera</p>
 <div class="prompt input_prompt">In&nbsp;[387]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##################################### SEPARACION DE LA BASE EN &quot;PRUEBA&quot; Y &quot;ENTRENAMIENTO&quot; ###############################</span>
-<span class="c1"># Lo deje hasta julio de 2018 para tener un anio de prueba</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##################################### SPLIT IN &#39;test&#39; AND &#39;train&#39; ###############################</span>
 <span class="n">FECHA_DE_CORTE</span> <span class="o">=</span> <span class="s1">&#39;2018-07-01&#39;</span>
 <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">base_interrupcion_legal</span><span class="p">[</span><span class="s1">&#39;ano_mes_ile&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">FECHA_DE_CORTE</span><span class="p">)</span>
 <span class="n">entrenamiento</span> <span class="o">=</span> <span class="n">base_interrupcion_legal</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
@@ -17101,7 +17081,7 @@ No. observaciones en prueb:  15889  que representa el  26.0 %
 <div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">################################# IMPUTACION DE VARIABLES PARA &quot;ENTRENAMIENTO&quot; #########################################</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">################################ IMPUTATION OF VARIABLES FOR TRAINING SET ####################################</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">x_entrenamiento</span>
 
@@ -17189,7 +17169,7 @@ No. observaciones en prueb:  15889  que representa el  26.0 %
 <div class="prompt input_prompt">In&nbsp;[391]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">####### Checamos que, en efecto, no haya missings</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check there is no missing values</span>
 <span class="p">[</span><span class="n">numeric_variables</span><span class="p">,</span> <span class="n">categorical_variables</span><span class="p">,</span> <span class="n">dates_variables</span><span class="p">,</span> <span class="n">string_variables</span><span class="p">]</span> <span class="o">=</span> <span class="n">eda</span><span class="o">.</span><span class="n">info_type_of_vars</span><span class="p">(</span><span class="n">x_entrenamiento</span><span class="p">)</span>
 <span class="n">eda</span><span class="o">.</span><span class="n">descriptive_stats_for_numeric_vars</span><span class="p">(</span><span class="n">x_entrenamiento</span><span class="p">,</span> <span class="n">numeric_variables</span><span class="p">)</span>
 <span class="n">eda</span><span class="o">.</span><span class="n">descriptive_stats_for_categorical_vars</span><span class="p">(</span><span class="n">x_entrenamiento</span><span class="p">,</span> <span class="n">string_variables</span><span class="p">)</span>
@@ -17247,7 +17227,7 @@ No. observaciones en prueb:  15889  que representa el  26.0 %
 <div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">######## One-hot encoder Para Entrenamiento</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># One-hot encoder for training set</span>
 <span class="n">dummies</span> <span class="o">=</span> <span class="n">feature_selection</span><span class="o">.</span><span class="n">transforma_cat_dummies</span><span class="p">(</span><span class="n">x_entrenamiento</span><span class="p">,</span> <span class="n">string_variables</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">x_entrenamiento</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">x_entrenamiento</span><span class="p">,</span> <span class="n">dummies</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">x_entrenamiento</span> <span class="o">=</span> <span class="n">x_entrenamiento</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">string_variables</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
@@ -17294,9 +17274,10 @@ No. observaciones en prueb:  15889  que representa el  26.0 %
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">############################################# FEATURE ENGINEERING ####################################################</span>
-
-<span class="n">N_ARBOLES</span> <span class="o">=</span> <span class="mi">10000</span>  <span class="c1">#The number of trees in the forest</span>
-<span class="n">SEMILLA</span> <span class="o">=</span> <span class="mi">104</span> <span class="c1"># the seed used by the random number generator</span>
+<span class="c1"># Number of trees in the forest</span>
+<span class="n">N_ARBOLES</span> <span class="o">=</span> <span class="mi">10000</span>  
+<span class="c1"># Seed used by the random number generator</span>
+<span class="n">SEMILLA</span> <span class="o">=</span> <span class="mi">104</span> 
 
 <span class="c1">#Create a Gaussian Classifier</span>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="n">N_ARBOLES</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">SEMILLA</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
@@ -17420,7 +17401,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#################### SELECCION DE VARIABLES PARA LA MUESTRA DE ENTRENAMIENTO #########################################</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">################################ SELECTION OF VARIABLES FOR MODEL #############################################</span>
 <span class="n">x_entrenamiento</span> <span class="o">=</span> <span class="n">x_entrenamiento</span><span class="p">[[</span><span class="s1">&#39;menarca&#39;</span><span class="p">,</span> <span class="s1">&#39;nhijos&#39;</span><span class="p">,</span> <span class="s1">&#39;ocupacion2_estudiante&#39;</span><span class="p">,</span> <span class="s1">&#39;npartos&#39;</span><span class="p">,</span> <span class="s1">&#39;escolaridad_superior&#39;</span><span class="p">,</span> <span class="s1">&#39;ocupacion2_empleada&#39;</span><span class="p">,</span> <span class="s1">&#39;ncesarea&#39;</span><span class="p">]]</span>
 </pre></div>
 
@@ -17555,7 +17536,6 @@ dtype: float64</pre>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">########################################## TEMPORAL CROSS VALIDATION #################################################</span>
 <span class="n">tscv</span> <span class="o">=</span> <span class="n">TimeSeriesSplit</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="n">tscv</span><span class="p">)</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">x_entrenamiento</span>
@@ -17598,20 +17578,17 @@ dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">############################################### DECISION TREE ########################################################</span>
-<span class="c1">#ocuparemos un RF</span>
 <span class="n">classifier</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
 
-<span class="c1">##separando en train, test</span>
-<span class="c1">#X_train, X_test, y_train, y_test = train_test_split(X, y)</span>
-
-<span class="c1">#definicion de los hiperparametros que queremos probar</span>
+<span class="c1"># Hyperparameters</span>
 <span class="n">hyper_param_grid1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span> 
                      <span class="s1">&#39;min_samples_split&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span>
-                    <span class="s1">&#39;criterion&#39;</span><span class="p">:[</span><span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;entropy&#39;</span><span class="p">],</span>
-                    <span class="s1">&#39;splitter&#39;</span><span class="p">:[</span><span class="s1">&#39;random&#39;</span><span class="p">,</span> <span class="s1">&#39;best&#39;</span><span class="p">],</span>
-                    <span class="s1">&#39;presort&#39;</span><span class="p">:[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]}</span>
+                     <span class="s1">&#39;criterion&#39;</span><span class="p">:[</span><span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;entropy&#39;</span><span class="p">],</span>
+                     <span class="s1">&#39;splitter&#39;</span><span class="p">:[</span><span class="s1">&#39;random&#39;</span><span class="p">,</span> <span class="s1">&#39;best&#39;</span><span class="p">],</span>
+                     <span class="s1">&#39;presort&#39;</span><span class="p">:[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]}</span>
 
-<span class="c1">#ocupemos grid search!, el verbose permite hacer debugging ... el 3 nos permitirá ver los mensajes de 3 trials de los 10 </span>
+<span class="c1"># Grid search!</span>
+<span class="c1"># verbose for debugging, &#39;3&#39; allows for messages</span>
 <span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> 
                            <span class="n">hyper_param_grid1</span><span class="p">,</span> 
                            <span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;f1&#39;</span><span class="p">,</span>
@@ -17620,11 +17597,10 @@ dtype: float64</pre>
                            <span class="n">verbose</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_entrenamiento</span><span class="p">,</span> <span class="n">y_entrenamiento</span><span class="p">)</span>
 
-<span class="c1">#de los valores posibles que pusimos en el grid, cuáles fueron los mejores</span>
+<span class="c1"># Best params</span>
 <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span>
 
-<span class="c1">#mejor score asociado a los modelos generados con los diferentes hiperparametros</span>
-<span class="c1">#corresponde al promedio de los scores generados con los cv</span>
+<span class="c1"># Best score, average of scores in cv sets</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Valor de la mejor métrica para el modelo de Decision Tree:&#39;</span><span class="p">,</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_score_</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 
@@ -17709,19 +17685,15 @@ dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">############################################### RANDOM FOREST ########################################################</span>
-<span class="c1">#ocuparemos un RF</span>
 <span class="n">classifier</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
 
-<span class="c1">##separando en train, test</span>
-<span class="c1">#X_train, X_test, y_train, y_test = train_test_split(X, y)</span>
-
-<span class="c1">#definicion de los hiperparametros que queremos probar</span>
+<span class="c1"># Hyperparameters</span>
 <span class="n">hyper_param_grid2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">],</span> 
-                    <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span> 
-                    <span class="s1">&#39;max_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sqrt&#39;</span><span class="p">,</span><span class="s1">&#39;log2&#39;</span><span class="p">],</span>
-                    <span class="s1">&#39;min_samples_split&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">]}</span>
+                     <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span> 
+                     <span class="s1">&#39;max_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sqrt&#39;</span><span class="p">,</span><span class="s1">&#39;log2&#39;</span><span class="p">],</span>
+                     <span class="s1">&#39;min_samples_split&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">]}</span>
 
-<span class="c1">#ocupemos grid search!, el verbose permite hacer debugging ... el 3 nos permitirá ver los mensajes de 3 trials de los 10 </span>
+<span class="c1"># Gid search</span>
 <span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> 
                            <span class="n">hyper_param_grid2</span><span class="p">,</span> 
                            <span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;f1&#39;</span><span class="p">,</span>
@@ -17730,11 +17702,10 @@ dtype: float64</pre>
                            <span class="n">verbose</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_entrenamiento</span><span class="p">,</span> <span class="n">y_entrenamiento</span><span class="p">)</span>
 
-<span class="c1">#de los valores posibles que pusimos en el grid, cuáles fueron los mejores</span>
+<span class="c1"># Best params</span>
 <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span>
 
-<span class="c1">#mejor score asociado a los modelos generados con los diferentes hiperparametros</span>
-<span class="c1">#corresponde al promedio de los scores generados con los cv</span>
+<span class="c1"># Best score</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Valor de la mejor métrica para el modelo de Random Forest:&#39;</span><span class="p">,</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_score_</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 
@@ -17815,20 +17786,16 @@ dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">############################################### XGBOOST ########################################################</span>
-<span class="c1">#ocuparemos un RF</span>
 <span class="n">classifier</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">()</span>
 
-<span class="c1">##separando en train, test</span>
-<span class="c1">#X_train, X_test, y_train, y_test = train_test_split(X, y)</span>
-
-<span class="c1">#definicion de los hiperparametros que queremos probar</span>
+<span class="c1"># Hyperparameters</span>
 <span class="n">hyper_param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
                     <span class="s1">&#39;min_child_weight&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span>
                     <span class="s1">&#39;learning_rate&#39;</span><span class="p">:[</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.1</span><span class="p">],</span>
                     <span class="s1">&#39;objective&#39;</span><span class="p">:[</span><span class="s1">&#39;binary:logistic&#39;</span><span class="p">,</span> <span class="s1">&#39;binary:logitraw&#39;</span><span class="p">,</span><span class="s1">&#39;binary:hinge&#39;</span><span class="p">]</span>
                     <span class="p">}</span>
 
-<span class="c1">#ocupemos grid search!, el verbose permite hacer debugging ... el 3 nos permitirá ver los mensajes de 3 trials de los 10 </span>
+<span class="c1"># Grid search!</span>
 <span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> 
                            <span class="n">hyper_param_grid</span><span class="p">,</span> 
                            <span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;f1&#39;</span><span class="p">,</span>
@@ -17837,11 +17804,10 @@ dtype: float64</pre>
                            <span class="n">verbose</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_entrenamiento</span><span class="p">,</span> <span class="n">y_entrenamiento</span><span class="p">)</span>
 
-<span class="c1">#de los valores posibles que pusimos en el grid, cuáles fueron los mejores</span>
+<span class="c1"># Best params</span>
 <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span>
 
-<span class="c1">#mejor score asociado a los modelos generados con los diferentes hiperparametros</span>
-<span class="c1">#corresponde al promedio de los scores generados con los cv</span>
+<span class="c1"># Best score</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Valor de la mejor métrica para el modelo de XGBoost:&#39;</span><span class="p">,</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_score_</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 
@@ -17908,7 +17874,7 @@ dtype: float64</pre>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cv_results_XGBoost</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">grid_search</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">)</span>
 <span class="n">cv_results_XGBoost</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="c1">#</span>
+<span class="c1"># Save to file</span>
 <span class="n">cv_results_XGBoost</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;Output/XGBoost.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
@@ -17930,12 +17896,12 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">########################################### SELECCION DE MODELO Y PARAMETROS #########################################</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">####################################### SELECTION OF MODEL AND HYPERPARAMETERS #######################################</span>
 <span class="n">results_all</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">cv_results_forest</span><span class="p">,</span> <span class="n">cv_results_arbol</span><span class="p">,</span> <span class="n">cv_results_XGBoost</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;False&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;rank_test_score&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
 <span class="n">results_all</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;Output/all_models.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="c1">## mejor configuración de hiperparámetros de acuerdo a nuestra métrica</span>
+<span class="c1"># Best parameters according to specifided metric</span>
 <span class="n">results_all</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">params</span>
 </pre></div>
 
@@ -17996,9 +17962,8 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">################################## PREDICCION EN LA MUESTRA DE PRUEBA ################################################</span>
-<span class="c1">######## Imputacion para base de prueba</span>
-
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">################################## PREDICTION FOR &#39;test&#39; SET ################################################</span>
+<span class="c1"># Imputation for test set</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">x_prueba</span>
 
 <span class="n">var</span> <span class="o">=</span> <span class="s1">&#39;edo_civil&#39;</span>
@@ -18020,7 +17985,6 @@ dtype: float64</pre>
 <span class="n">aux</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">var</span><span class="p">]]</span>
 <span class="n">aux_imputed_anticonceptivo2</span> <span class="o">=</span> <span class="n">aux_imputer_anticonceptivo2</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">aux</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">=</span><span class="n">aux_imputed_anticonceptivo2</span>
-
 
 <span class="n">var</span> <span class="o">=</span> <span class="s1">&#39;ocupacion2&#39;</span>
 <span class="n">aux</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">var</span><span class="p">]]</span>
@@ -18063,7 +18027,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[100]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">######## One -hot encoder Para Prueba</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># One-hot encoder for test set</span>
 <span class="n">dummies</span> <span class="o">=</span> <span class="n">feature_selection</span><span class="o">.</span><span class="n">transforma_cat_dummies</span><span class="p">(</span><span class="n">x_prueba</span><span class="p">,</span> <span class="n">string_variables</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">x_prueba</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">x_prueba</span><span class="p">,</span> <span class="n">dummies</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">x_prueba</span> <span class="o">=</span> <span class="n">x_prueba</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">string_variables</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
@@ -18079,7 +18043,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Seleccion de variables para la muestra de &quot;prueba&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Variables for test set</span>
 <span class="n">x_prueba</span> <span class="o">=</span> <span class="n">x_prueba</span><span class="p">[[</span><span class="s1">&#39;menarca&#39;</span><span class="p">,</span> <span class="s1">&#39;nhijos&#39;</span><span class="p">,</span> <span class="s1">&#39;ocupacion2_estudiante&#39;</span><span class="p">,</span> <span class="s1">&#39;npartos&#39;</span><span class="p">,</span> <span class="s1">&#39;escolaridad_superior&#39;</span><span class="p">,</span> <span class="s1">&#39;ocupacion2_empleada&#39;</span><span class="p">,</span> <span class="s1">&#39;ncesarea&#39;</span><span class="p">]]</span>
 </pre></div>
 
@@ -18106,10 +18070,9 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[104]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">################################################# MODELO SELECCIONADO ##############################################</span>
-<span class="c1"># Tomado de (https://jessesw.com/XG-Boost/)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">################################################# SELECTED MODEL ##############################################</span>
 
-<span class="c1"># specify parameters via map</span>
+<span class="c1"># Specify parameters via map</span>
 <span class="n">param_finales</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;min_child_weight&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;objective&#39;</span><span class="p">:</span> <span class="s1">&#39;binary:hinge&#39;</span><span class="p">}</span>
 
 <span class="n">NUM_ROUNDS</span> <span class="o">=</span> <span class="mi">5000</span>
@@ -18154,7 +18117,8 @@ Series.base is deprecated and will be removed in a future version
 <div class="prompt input_prompt">In&nbsp;[402]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we can then plot our feature importances using a built-in method. This is similar to the feature importances found in sklearn.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we can then plot our feature importances using a built-in method. </span>
+<span class="c1"># This is similar to the feature importances found in sklearn.</span>
 <span class="c1">#sns.set_style(&quot;darkgrid&quot;)</span>
 <span class="c1">#xgb.plot_importance(best_model)</span>
 </pre></div>
@@ -18169,7 +18133,7 @@ Series.base is deprecated and will be removed in a future version
 <div class="prompt input_prompt">In&nbsp;[106]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">######################################## PREDICCION PARA LA MUESTRA DE &quot;PRUEBA&quot; #####################################</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">######################################## PREDICTION FOR &quot;test&quot; SET #####################################</span>
 <span class="n">testdmat</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">DMatrix</span><span class="p">(</span><span class="n">x_prueba</span><span class="p">)</span>
 <span class="n">y_predict</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testdmat</span><span class="p">)</span>
 <span class="c1">#y_predict</span>
@@ -18205,7 +18169,7 @@ Series.base is deprecated and will be removed in a future version
 <div class="prompt input_prompt">In&nbsp;[107]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Convertimos a etiquetas 0/1, SI ES NECESARIO</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Change to 0/1 tag, if necessary</span>
 <span class="c1"># THRESHOLD = 0.5</span>
 
 <span class="c1">#y_predict[y_predict &gt; THRESHOLD] = 1</span>
@@ -18243,7 +18207,7 @@ Series.base is deprecated and will be removed in a future version
 <div class="prompt input_prompt">In&nbsp;[135]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">########## Métricas</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">###################################### SELECTED MODEL METRICS ################################################</span>
  
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_predict</span><span class="p">,</span> <span class="n">y_prueba</span><span class="p">))</span>
 </pre></div>
@@ -18338,7 +18302,7 @@ Series.base is deprecated and will be removed in a future version
 <div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">########### ROC curve</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ROC curve</span>
 <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">roc_curve</span><span class="p">(</span><span class="n">y_prueba</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">)</span>
 <span class="n">roc_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
 </pre></div>
@@ -18399,7 +18363,7 @@ Series.base is deprecated and will be removed in a future version
 <div class="prompt input_prompt">In&nbsp;[155]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">########### Confusion matrix</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Confusion matrix</span>
 <span class="n">conf_mat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_prueba</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
 <span class="n">conf_mat</span> <span class="o">=</span> <span class="n">conf_mat</span><span class="p">[</span><span class="n">conf_mat</span><span class="o">.</span><span class="n">columns</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">conf_mat</span><span class="p">)</span>
