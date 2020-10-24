@@ -26,20 +26,15 @@ def split_string_column_into_numeric_columns(df, column_name, separator, new_col
     
     return df
 
-# def clean_variables_values(df, columns_names):
-#     """
-#     Clean the values of the selected columns: lowercase, no spaces, no accent marks
-    
-#     param: df is a dataframe where the variables to clean are
-#            colum_names is a list with the name of the variables we are going to clean
-#     return: df with clean colums
-#     """
-#     for name in columns_names:
-#         df[name] = df[name].str.strip().str.lower().str.replace('.','').str.replace(',','').str.replace(';','').str.replace(' ','_').str.replace('á','a').str.replace('é','e')      .str.replace('í','i').str.replace('ó','o').str.replace('ú','u').str.replace('ñ','n') 
-    
-#     return df
 
 def split_string_column_into_numeric_columns(df, column_name, separator, new_cols_name):
+    """This function split string column into numeric columns, given a separtor
+    params:
+       df: df where the columns exits
+       column_name: str column that one wants to split
+       separator: str indicating the token to use as separator (e.g. '-', '/')
+       new_cols_name: list of str with the names of the new columsn
+    return:"""
     #Split the column
     df[new_cols_name] =  df.loc[:, column_name ].str.split(separator, expand = True)
     for name in new_cols_name:
@@ -52,6 +47,7 @@ def clean_variables_values(df, columns_names):
     return df
 
 def identify_date_variable(df):
+    """This function identify date variables"""
     for col in df.columns:
         if df[col].dtype == 'object':
             try:
@@ -61,24 +57,22 @@ def identify_date_variable(df):
                 pass
     return df
 
-# def estandariza_datos(data):  
-#     data=pd.DataFrame(data)
-#     data=data.applymap(clean_data.remove_whitespace)
-#     data=data.iloc[:,0]
-#     data=data.str.lower().str.replace(' ','_')
-#     data=data.str.replace('ñ','n')
-#     trans_table=str.maketrans('áéíóúäëïöü','aeiouaeiou')
-#     data=data.str.translate(trans_table) 
-#     return data
+
 
 def remove_whitespace(x):
+    """ This function removes white spaces, if exists """
     try:
         x=" ".join(x.split())
     except:
         pass
     return x
 
-def estandariza_datos(data):  
+def estandariza_datos(data): 
+    """This function standardize the values of a series
+    params:
+        data: a pd.Series
+    return :
+        data: a pd.Series with values standardized"""
     data=pd.DataFrame(data)
     data=data.iloc[:,0]
     trans_table=str.maketrans('|°!"#$%&()=¿?¡}´]*¨{[-.,_:;<>','                             ')
@@ -93,6 +87,11 @@ def estandariza_datos(data):
     return data
 
 def month_string_to_number_string(month_string):
+    """This function changes month 3-letter abreviation to corresponding number of month.
+    params:
+        month_string: 3-letter abreviation in lower case of the month
+    return:
+        out: number of the month"""
     m = {
         'ene': '01',
         'feb': '02',
