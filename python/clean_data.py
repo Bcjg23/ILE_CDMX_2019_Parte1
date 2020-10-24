@@ -25,6 +25,11 @@ def remove_whitespace(x):
 
 
 def estandariza_datos(data):  
+    """This function standardize the values of a series
+    params:
+        data: a pd.Series
+    return :
+        data: a pd.Series with values standardized"""
     data=pd.DataFrame(data)
     data=data.iloc[:,0]
     trans_table=str.maketrans('|°!"#$%&()=¿?¡}´]*¨{[-.,_:;<>','                             ')
